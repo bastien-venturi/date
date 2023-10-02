@@ -1,0 +1,74 @@
+let body = document.querySelector('body');
+let main = document.createElement('main');
+let section = document.createElement('section');
+
+let titre = document.createElement('h1')
+titre.textContent = 'Dates'
+
+body.appendChild(main);
+main.appendChild(titre);
+main.appendChild(section);
+
+function beldate() {
+    let newdate = document.createElement('div');
+    newdate.classList.add("date");
+    const currentDate = new Date();
+    const year = currentDate.getUTCFullYear();
+    const month = currentDate.getUTCMonth() + 1;
+    const day = currentDate.getUTCDate();
+    const hour = currentDate.getUTCHours() + 2;
+    const min = currentDate.getUTCMinutes();
+    const sec = currentDate.getUTCSeconds();
+    newdate.textContent = `${day}/${month}/${year} ${hour}:${min}:${sec}`;
+    return newdate;
+}
+
+function spdate() {
+    let newdate = document.createElement('div');
+    newdate.classList.add("date");
+    const currentDate = new Date();
+    const year = currentDate.getUTCFullYear();
+    const month = currentDate.getUTCMonth() + 1;
+    const day = currentDate.getUTCDate();
+    const hour = currentDate.getUTCHours() + 3;
+    const min = currentDate.getUTCMinutes();
+    const sec = currentDate.getUTCSeconds();
+    newdate.textContent = `${day}/${month}/${year} ${hour}:${min}:${sec}`;
+    return newdate;
+}
+
+function anchdate() {
+    let newdate = document.createElement('div');
+    newdate.classList.add("date");
+    const currentDate = new Date();
+    const year = currentDate.getUTCFullYear();
+    const month = currentDate.getUTCMonth() + 1;
+    const day = currentDate.getUTCDate();
+    const hour = currentDate.getUTCHours() - 8;
+    const min = currentDate.getUTCMinutes();
+    const sec = currentDate.getUTCSeconds();
+    newdate.textContent = `${day}/${month}/${year} ${hour}:${min}:${sec}`;
+    return newdate;
+}
+
+
+let belgium = document.createElement('h2')
+belgium.textContent = 'Belgique'
+
+let anchorage = document.createElement('h2')
+anchorage.textContent = 'Anchorage'
+
+let saintpetersbourg = document.createElement('h2')
+saintpetersbourg.textContent = 'Saint-Pétersbourg'
+
+
+belgium.appendChild(beldate());
+anchorage.appendChild(anchdate());
+saintpetersbourg.appendChild(spdate());
+
+
+section.appendChild(belgium);
+section.appendChild(anchorage);
+section.appendChild(saintpetersbourg);
+
+console.log(beldate(),anchdate(),spdate());
